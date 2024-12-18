@@ -1,0 +1,128 @@
+/* Basic Styles */
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: #eef2f3;
+  color: #333;
+  position: relative;
+}
+
+/* Header Styles */
+.header {
+  background-color: rgba(74, 74, 138, 0.8);
+  padding: 10px;
+  color: white;
+  margin-bottom: 20px;
+}
+
+h1 {
+  margin: 10px 0;
+}
+
+.header p {
+  font-size: 14px;
+  font-style: italic;
+}
+
+
+
+/* Game Board */
+.game-board {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 10px;
+  max-width: 500px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* Cards */
+.card {
+  width: 100px;
+  height: 100px;
+  perspective: 1000px;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+}
+
+.card.flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.card-front {
+  background-color: #8ab6d6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.card-back {
+  background-color: #4a4a8a;
+  transform: rotateY(180deg);
+}
+
+.card-back img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+p {
+    margin-bottom: 20px;
+  }
+  
+  #win-message {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #4a4a8a;
+    margin-top: 20px;
+  }
+  
+  .hidden {
+    display: none;
+  }
+
+  .restart-btn {
+    background-color: #4a4a8a;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+    transition: background 0.3s;
+  }
+  
+  .restart-btn:hover {
+    background-color: #8ab6d6;
+  }
+  
+  /* Network Logo */
+  .network-logo {
+    display: block;
+    margin: 30px auto 0;
+    width: 300px;
+    height: 300px;
+    opacity: 0.9;
+  }
